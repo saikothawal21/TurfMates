@@ -9,6 +9,12 @@ const turfSchema = new mongoose.Schema({
   },
   sportsAvailable: [String], // e.g. ['Football', 'Tennis']
   slotCapacity: { type: Number, default: 1 }, // how many teams can play at once
+  slots: [{
+  date: Date,
+  time: String,
+  isBooked: Boolean
+}]
+
 }, { timestamps: true });
 
 module.exports = mongoose.model('Turf', turfSchema);

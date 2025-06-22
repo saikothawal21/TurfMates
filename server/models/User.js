@@ -5,6 +5,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   sports: [String], // e.g. ['Football', 'Cricket']
   skillLevel: { type: String, enum: ['Beginner', 'Intermediate', 'Advanced'], default: 'Beginner' },
+  email: { type: String, unique: true },
+
   location: String
 }, { timestamps: true });
 
